@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de integração Python e HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Calculadora de Nota</h1>
+
+  <form id="notaForm">
+    <label for="acertos">Número de acertos:</label>
+    <input type="number" id="acertos" name="acertos" required>
+    <br>
+    <input type="submit" value="Calcular Nota">
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#notaForm').submit(function(event) {
+        event.preventDefault();
+
+        // Obter o valor digitado pelo usuário
+        var acertos = $('#acertos').val();
+
+        // Enviar a solicitação para o arquivo Python
+        $.ajax({
+          type: 'POST',
+          url: 'main.py',
+          data: {acertos: acertos},
+          success: function(response) {
+            // Exibir o resultado retornado pelo arquivo Python na div de resultado
+            $('#resultado').text('A sua nota aproximada é: ' + response);
+          },
+          error: function() {
+            alert('Ocorreu um erro ao processar a solicitação.');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
