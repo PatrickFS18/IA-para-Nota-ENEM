@@ -1,3 +1,4 @@
+#'''esse arquivo funciona independente dos arquivos da pasta IA-ENEM. Apenas mantive em casod e erro no main.py'''
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense

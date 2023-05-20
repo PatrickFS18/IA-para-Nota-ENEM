@@ -10,6 +10,7 @@ class RequestHandler(BaseHTTPRequestHandler):
     
     # Método para lidar com solicitações POST
     def do_POST(self):
+        self.send_header('Content-type', 'application/json; charset=utf-8')
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         

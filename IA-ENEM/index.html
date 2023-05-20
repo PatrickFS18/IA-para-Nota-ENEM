@@ -3,6 +3,8 @@
 <head>
   <title>Exemplo de integração Python e HTML</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta charset="UTF-8">
+
 </head>
 <body>
   <h1>Calculadora de Nota</h1>
@@ -27,7 +29,7 @@
         // Enviar a solicitação para o arquivo Python
         $.ajax({
           type: 'POST',
-          url: 'main.py',
+          url: 'IA-ENEM\main.py',
           data: {acertos: acertos},
           success: function(response) {
             // Exibir o resultado retornado pelo arquivo Python na div de resultado
