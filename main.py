@@ -59,8 +59,8 @@ model.compile(loss='mse', optimizer='adam')
 model.fit(acertos_normalizados, notas_normalizadas, epochs=1000, verbose=0)
 
 # Entrada do usuário
-acertos_usuario = np.array([[45]])
-acertos_usuario_normalizados = acertos_usuario / acertos_max
+acertos_usuario = float(input("Digite o número de questões acertadas: "))
+acertos_usuario_normalizados = np.array([[acertos_usuario]]) / acertos_max
 
 # Predição da nota aproximada
 nota_aproximada_normalizada = model.predict(acertos_usuario_normalizados)
