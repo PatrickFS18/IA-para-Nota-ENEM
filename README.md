@@ -17,5 +17,5 @@ cd IA-ENEM/
 pip install -r requirements.txt
 
 # Executa:
-
+cd ..
 python calcula_nota.py
